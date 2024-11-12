@@ -1,0 +1,8 @@
+{
+    "projectName": "My first project",
+    "environmentName": "My first project-snowflake",
+    "pipelineName": "SQS Triggering/2 - Do Work",
+    "scalarVariables": {
+        "name": "Johnathan"
+    }
+}

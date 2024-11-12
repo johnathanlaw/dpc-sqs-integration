@@ -1,0 +1,42 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "logs:CreateLogGroup",
+            "Resource": "arn:aws:logs:eu-west-1:220149347750:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": [
+                "arn:aws:logs:eu-west-1:220149347750:log-group:/aws/lambda/jlaw-sqs-lambda:*"
+            ]
+        },
+        {
+            "Sid": "SQSMinimum",
+            "Effect": "Allow",
+            "Action": [
+                "sqs:GetQueueAttributes",
+                "sqs:ReceiveMessage",
+                "sqs:DeleteMessage"
+            ],
+            "Resource": [
+                "MySQSARN"
+            ]
+        },
+        {
+            "Sid": "SecretManagerMinimun",
+            "Effect": "Allow",
+            "Action": [
+                "secretsmanager:GetSecretValue"
+            ],
+            "Resource": [
+                "MySecretARN"
+            ]
+        }
+    ]
+}
